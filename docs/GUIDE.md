@@ -1,8 +1,8 @@
 # Unlocking AI Potential with Agora TEN Framework for iOS Apps
 
-In the rapidly evolving landscape of mobile applications, integrating artificial intelligence into chat clients has become a game-changer for the user experience. In this blog post, we'll explore how the Agora TEN Framework empowers developers to create robust and interactive iOS AI chat clients. By leveraging Agora’s cutting-edge technology, you can enhance real-time communication and seamlessly incorporate AI capabilities, making your app not only functional but also intelligent. Join me as we dive into the key features of the Agora TEN Framework and walk through the process of building your very own AI-powered chat client for iOS.
+In the rapidly evolving landscape of mobile applications, integrating artificial intelligence into chat clients has become a game-changer for the user experience. In this guide, we'll  create an interactive AI voice-chat app for iOS, powered by the TEN Framework. By leveraging Agora’s cutting-edge technology, you can enhance real-time communication and seamlessly incorporate AI capabilities, making your app not only functional but also intelligent. Join me as we dive into the key features of the Agora TEN Framework and walk through the process of building your very own AI-powered chat client for iOS.
 
-TEN stands for Transformative Extension Network. An extension is a service module that work for different vendors.  Working together, the modules form a very useful chained services, and we call it an agent.  In this blog, we use OpenAI's LLM, Azure's TTS, and Agora's RTC extension together as our AI agent to create an iOS chat app. More information about the TEN Framework can be viewed [here](https://doc.theten.ai/).
+TEN stands for Transformative Extension Network, where an extension is a service module that connects Agora's Audio, Video, and Data streams into 3rd party AI services. By connecting multiple extensions together, this daisy chain of services, forms an Agent. This enables developers to connect end-users with powerful AI Agents using natural inputs like voice and vision.In this guide, we use the extensions for OpenAI's LLM, Azure's TTS, and Agora's RTC as our AI agent that users can speak to using the iOS chat app. More information about the TEN Framework can be viewed [here](https://doc.theten.ai/).
 
 ## Prerequisites  
 - TEN Agent  
@@ -17,7 +17,7 @@ TEN stands for Transformative Extension Network. An extension is a service modul
 2. Obtain an OpenAI API key from the [platform dashboard]. (https://platform.openai.com/api-keys)  
 3. Obtain an Agora App ID and certificate from [developer console] (onsole.agora.io/projects).  
 4. Clone the [TEN Agent project](https://github.com/TEN-framework/TEN-Agent) from GitHub.  
-5. Follow the TEN Agent project's instructions to set up the services in your local environment. Use the keys that you obtained from Steps 1-3 to set up the .env file.
+5. Follow [TEN Agent project's instructions](https://github.com/TEN-framework/TEN-Agent?tab=readme-ov-file#how-to-build-ten-agent-locally) to set up the services in your local environment. Use the keys that you obtained from Steps 1-3 to set up the .env file.
 
 You can observe running services from the Docker desktop display, like the following screen shot:  
 ![docker](https://github.com/user-attachments/assets/da4525b8-ab3a-4579-b318-591d462b5c9e)
@@ -37,7 +37,7 @@ The completed TEN iOS Demo can be cloned from [this GitHub repo](https://github.
 Note that the Agora iOS RTC engine is required for the package dependence.  
 ![PM](https://github.com/user-attachments/assets/e73fdcb8-9c56-4cb2-9e61-fd8bc0531d29)
 
-Update the config.json file. Essentially, the appId and the serverBaseURL are required.  
+Update the config.json file. Fill in the `appId` from your Agora account and if you are running the Agent on a different port than the default, make sure to update the `serverBaseURL`.
 ![Config](https://github.com/user-attachments/assets/957f8d8f-9e04-43f1-b1f1-7a7bb789d620)  
   
   
@@ -45,7 +45,7 @@ Update the config.json file. Essentially, the appId and the serverBaseURL are re
 |--|--|  
 |agentUid | UID that the AI Agent uses in the RTC channel. |  
 |appId|App ID for your project. Get it from your developer console.|  
-|channel | Name of the RTC channel; leave it blank since the user will enter it.|  
+|channel | Name of the RTC channel. It will get set later in the code.|  
 |rtcToken| Put "true" if your AppID uses a token. The code will get it from the server|  
 |product|Leave it as "ils" for live streaming|  
 |agoarAsrLanguage|Use "en-US" for now|  

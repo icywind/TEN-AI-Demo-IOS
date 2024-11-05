@@ -127,11 +127,11 @@ open class NetworkManager {
         // Encode the data into JSON format
         let body = try JSONEncoder().encode(data)
 
-        // Convert JSON data to a string
-        if let jsonString = String(data: body, encoding: .utf8) {
-            print(jsonString)
-        }
-        
+        // Convert JSON data to a string for debug
+//        if let jsonString = String(data: body, encoding: .utf8) {
+//            print(jsonString)
+//        }
+//        
         // Set the request body to the encoded JSON data
         request.httpBody = body
         
