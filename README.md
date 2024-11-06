@@ -2,7 +2,7 @@
 
 ![TENDemoIOS](https://github.com/user-attachments/assets/8ea3df82-61ba-4fa2-ba43-52b85040a27f)
 
-This app is powered by the technology of Realtime Communication, Realtime Transcription, a Large Language Model (LLM), and Text to Speech extensions. The TEN Framework makes the workflow super easy! The iOS Demo resembles the web demo and acts as the mobile frontend to the AI Agent. You may ask the Agent any general question.
+This app is powered by TEN Framework which is used to implement four core technologies: Realtime Communication, Realtime Transcription, a Large Language Model (LLM), and Text to Speech extensions. The TEN Framework makes the workflow super easy! The iOS Demo resembles voice chat demos from OpenAI, where end-users speak to the AI Agent and the Agent speaks back. The TEN Framework makes the workflow super easy! The iOS Demo resembles the web demo and acts as the mobile frontend to the AI Agent. You may ask the Agent any general question.
 
 For more details of the project, view [the guide](docs/GUIDE.md).
 
