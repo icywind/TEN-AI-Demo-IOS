@@ -20,7 +20,7 @@ struct ChatView: View {
             _preview = true
         }
     }
-    
+    @State var isMuted = false
     @State var useFrontCamera : Bool = true
     /// Agora Manager holdes the user information that are leverage to show in a view
     ///  In the MVVM paradigm, the AgoraManager serves as the ViewModel
@@ -45,6 +45,13 @@ struct ChatView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit) // or .fill
                                 .frame(width: 40, height: 40)
+                        }
+                        Toggle(isOn: $isMuted) {
+                            Text(isMuted ? "Unmute" : "Mute")
+                        }
+                        .padding()
+                        .onChange(of: isMuted) { newValue in
+                            agoraManager.toggleMute(mute: newValue)
                         }
                     }
                 }

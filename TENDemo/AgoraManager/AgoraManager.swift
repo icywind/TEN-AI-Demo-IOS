@@ -239,6 +239,10 @@ open class AgoraManager: NSObject, ObservableObject {
     func switchCamera() {
         self.agoraEngine.switchCamera()
     }
+    
+    func toggleMute(mute: Bool) {
+        self.agoraEngine.muteLocalAudioStream(mute)
+    }
     // MARK: - Setup
 
     /// Initializes a new instance of `AgoraManager` with the specified app ID and client role.
